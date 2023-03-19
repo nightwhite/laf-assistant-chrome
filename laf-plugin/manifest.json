@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "laf助手",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "通过chatGPT写laf云函数",
   "action": {
     "default_icon": "logo.png",
