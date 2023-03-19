@@ -1,0 +1,5 @@
+name: gptForLaf
+methods:
+  - GET
+  - POST
+tags: []
