@@ -3,12 +3,9 @@ let tabsId;
 let url = "";
 // 监听快捷键
 chrome.commands.onCommand.addListener((command) => {
-  console.log(2222);
   if (command === "addString") {
-    console.log(11111);
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
       tabsId = tabs[0].id;
-      console.log(tabsId);
       chrome.scripting.executeScript(
         {
           target: { tabId: tabsId },
@@ -36,8 +33,6 @@ chrome.commands.onCommand.addListener((command) => {
 
 // 处理获取到的文本
 function handleText(resultsArray) {
-  console.log(url);
-  console.log(resultsArray);
   let text = resultsArray[0].result;
   if (text.indexOf("//") != -1) {
     chrome.storage.sync.get(
@@ -51,7 +46,7 @@ function handleText(resultsArray) {
             {
               target: { tabId: tabsId },
               func: () => {
-                let addText = '\n错误::::::请先配置URL后再尝试!!!!';
+                let addText = '\n错误::::::请先配置laf助手插件的接口地址后再尝试!!!!';
                 document.execCommand('insertText', false, addText);
               },
             },
@@ -69,14 +64,13 @@ function handleText(resultsArray) {
           })
           .then((response) => response.json())
           .then((data) => {
-            let addText2 = `\n` + data.data
+            let addText = `\n` + data.data
             chrome.scripting.executeScript(
               {
                 target: { tabId: tabsId },
-                args: [addText2],
-                func: (addText2) => {
-                  console.log(addText2);
-                  document.execCommand('insertText', false, addText2);
+                args: [addText],
+                func: (addText) => {
+                  document.execCommand('insertText', false, addText);
                 },
               },
               () => { }
@@ -84,6 +78,18 @@ function handleText(resultsArray) {
           })
           .catch((error) => console.error(error));
       }
+    );
+  }else{
+    let addText = "\n请在注释行按快捷键"
+    chrome.scripting.executeScript(
+      {
+        target: { tabId: tabsId },
+        args: [addText],
+        func: (addText) => {
+          document.execCommand('insertText', false, addText);
+        },
+      },
+      () => { }
     );
   }
 }

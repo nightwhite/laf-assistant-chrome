@@ -1,13 +1,97 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
-  <title>Options</title>
+  <title>接口地址</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    html,
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      min-width: 12em;
+    }
+
+    form {
+      background-color: white;
+      border-radius: 5px;
+      padding: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 12px;
+    }
+
+    input[type=text] {
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 12px;
+    }
+
+    button[type=button] {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      padding: 5px 10px;
+      font-size: 12px;
+      margin-top: 10px;
+      margin-right: 5px;
+    }
+
+    button[type=button]:hover {
+      background-color: #45a049;
+    }
+    button[type=button].help-btn {
+      background-color: gray;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      padding: 5px 10px;
+      font-size: 12px;
+      margin-top: 10px;
+      margin-right: 5px;
+    }
+
+    .help-btn {
+      background-color: gray;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      padding: 5px 10px;
+      font-size: 12px;
+      margin-top: 10px;
+    }
+
+    .button-container {
+      text-align: center;
+    }
+  </style>
 </head>
+
 <body>
   <form>
-    <label for="option1">接口地址:<input type="text" id="option1" name="url" value=""></label>
-    <button type="button" id="saveBtn">保存</button>
+    <label for="option1">接口地址:</label>
+    <input type="text" id="option1" name="url" value="">
+    <div class="button-container">
+      <button type="button" id="helpBtn" class="help-btn">帮助</button>
+      <button type="button" id="saveBtn">保存</button>
+    </div>
   </form>
   <script src="options.js"></script>
 </body>

@@ -24,3 +24,8 @@ saveBtn.addEventListener("click", () => {
     }
   );
 });
+
+const helpBtn = document.getElementById('helpBtn');
+helpBtn.addEventListener('click', () => {
+  chrome.tabs.create({ url: "https://hfkqdu-laf-chrome.site.laf.dev/" });
+});

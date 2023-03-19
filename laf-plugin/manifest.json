@@ -15,6 +15,11 @@
   "options_ui": {
     "page": "options.html"
   },
+  "icons": {
+    "16": "logo.png",
+    "48": "logo.png",
+    "128": "logo.png"
+  },  
   "commands": {
     "addString": {
       "suggested_key": {
